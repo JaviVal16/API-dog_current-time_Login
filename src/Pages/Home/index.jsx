@@ -19,15 +19,18 @@ const Home = () => {
     }, [])
     return (
         <Layout>
-            <div className='flex flex-wrap gap-10 bg-neutral-500'>
-                {cats.map((cat) => (
-                    <article className='w-80 h-80 flex items-center justify-center m-5 rounded-lg border-4 border-slate-600' key={cat.id}>
-                        <img className='w-full h-full object-cover' src={cat.url} />
-                    </article>
-                ))
-                }
-            </div>
-        </Layout>
+            <section className='bg-neutral-200 flex flex-col items-center'>
+                <h1 className='text-slate-600 text-3xl'>Gatos Bengalí</h1>
+                <div className='flex flex-wrap justify-center gap-10' >
+                    {cats.map((cat) => (
+                        <article className='w-80 h-80 flex items-center justify-center m-5 rounded-lg border-4 border-slate-600' key={cat.id}>
+                            <img className='w-full h-full object-cover' src={cat.url} />
+                        </article>
+                    ))
+                    }
+                </div>
+            </section >
+        </Layout >
     );
 }
 

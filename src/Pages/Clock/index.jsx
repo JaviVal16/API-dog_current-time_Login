@@ -14,9 +14,11 @@ function Clock() {
     }, []);
     return (
         <Layout>
-            <span>
-                {date.toLocaleTimeString()}
-            </span>
+            <section className='bg-neutral-100 w-full h-[calc(100vh-5rem)] flex items-center justify-center'>
+                <span className='text-9xl'>
+                    {date.toLocaleTimeString()}
+                </span>
+            </section>
         </Layout>
     );
 }
