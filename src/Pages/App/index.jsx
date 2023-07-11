@@ -7,7 +7,6 @@ import NotFound from '../NotFound';
 
 import './App.css'
 import { useState } from 'react';
-import Navbar from '../../components/Navbar';
 
 
 function App() {
@@ -34,7 +33,7 @@ function App() {
         element: <Clock />
       },
       {
-        path: '/sign-in',
+        path: '/',
         element: <SignIn />
       },
       {
@@ -48,7 +47,6 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
-      <Navbar />
     </BrowserRouter>
   )
 }

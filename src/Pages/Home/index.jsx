@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import Layout from "../../components/Layout";
+import Navbar from '../../components/Navbar'
 
 const Home = () => {
     const [cats, setCats] = useState([]);
@@ -19,6 +21,7 @@ const Home = () => {
     }, [])
     return (
         <Layout>
+            <Navbar />
             <section className='bg-neutral-200 flex flex-col items-center'>
                 <h1 className='text-slate-600 text-3xl'>Gatos Bengalí</h1>
                 <div className='flex flex-wrap justify-center gap-10' >

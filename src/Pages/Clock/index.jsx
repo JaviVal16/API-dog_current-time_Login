@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
+
 import Layout from '../../components/Layout';
+import Navbar from '../../components/Navbar'
+
+
 function Clock() {
     const [date, setDate] = useState(new Date());
 
@@ -14,6 +18,7 @@ function Clock() {
     }, []);
     return (
         <Layout>
+            <Navbar />
             <section className='bg-neutral-100 w-full h-[calc(100vh-5rem)] flex items-center justify-center'>
                 <span className='text-9xl'>
                     {date.toLocaleTimeString()}
