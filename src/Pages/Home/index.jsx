@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Layout from "../../components/Layout";
 
 const Home = () => {
     const [cats, setCats] = useState([]);
@@ -17,14 +18,16 @@ const Home = () => {
         fetchCats();
     }, [])
     return (
-        <div className='flex flex-wrap gap-10 bg-neutral-500'>
-            {cats.map((cat) => (
-                <article className='w-80 h-80 flex items-center justify-center m-5 rounded-lg border-4 border-slate-600' key={cat.id}>
-                    <img className='w-full h-full object-cover' src={cat.url} />
-                </article>
-            ))
-            }
-        </div>
+        <Layout>
+            <div className='flex flex-wrap gap-10 bg-neutral-500'>
+                {cats.map((cat) => (
+                    <article className='w-80 h-80 flex items-center justify-center m-5 rounded-lg border-4 border-slate-600' key={cat.id}>
+                        <img className='w-full h-full object-cover' src={cat.url} />
+                    </article>
+                ))
+                }
+            </div>
+        </Layout>
     );
 }
 

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
 
 import SignIn from '../SignIn/'
 import Home from '../Home';
@@ -7,6 +7,7 @@ import NotFound from '../NotFound';
 
 import './App.css'
 import { useState } from 'react';
+import Navbar from '../../components/Navbar';
 
 
 function App() {
@@ -22,15 +23,32 @@ function App() {
 
   const logout = () => setUser(null)
 
+  const AppRoutes = () => {
+    let routes = useRoutes([
+      {
+        path: '/home',
+        element: <Home />
+      },
+      {
+        path: '/clock',
+        element: <Clock />
+      },
+      {
+        path: '/sign-in',
+        element: <SignIn />
+      },
+      {
+        path: '/*',
+        element: <NotFound />
+      },
+    ]);
+    return routes;
+  }
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route index element={<SignIn login={login()} />} />
-        <Route path='/login' element={<SignIn />} />
-        <Route path='/home' element={<Home logout={logout} />} />
-        <Route path='/clock' element={<Clock />} />
-        <Route path='/*' element={<NotFound />} />
-      </Routes>
+      <AppRoutes />
+      <Navbar />
     </BrowserRouter>
   )
 }
