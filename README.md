@@ -2,8 +2,10 @@
 ### Descripción
 Este archivo README proporciona información sobre la web app y cómo ejecutarla correctamente. <br>
 La aplicación utiliza JSON server como backend y se requiere el siguiente comando para su ejecución:
+
 Copy code <br>
-npm json-server --watch src/api/db.json --port 5000
+npm json-server --watch src/api/db.json --port 5000 <br>
+
 La aplicación utiliza React + Vite como frontend y se requiere el siguiente comando para su ejecución:
 Copy code <br>
 npm run dev
